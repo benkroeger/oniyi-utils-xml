@@ -32,7 +32,7 @@ exports.parse = function parse(xmlString, mimeType, parserOptions) {
   return parser.parseFromString(xmlString, mimeType);
 };
 
-exports.selectUseNamespace = function selectUseNamespace(nameSpaces) {
+exports.selectUseNamespaces = function selectUseNamespaces(nameSpaces) {
   return xpath.useNamespaces(nameSpaces);
 };
 
