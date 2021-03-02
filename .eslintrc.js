@@ -9,36 +9,12 @@
 module.exports = {
   parserOptions: {
     sourceType: 'script',
-    ecmaFeatures: {
-      jsx: false,
-    },
   },
   env: {
-    jest: true,
     node: true,
   },
-  plugins: ['prettier'],
-  extends: ['airbnb-base', 'prettier'],
+  extends: ['airbnb-base', 'plugin:prettier/recommended'],
   rules: {
-    'prettier/prettier': 'error',
+    strict: ['error', 'global'],
   },
-  overrides: [
-    {
-      files: ['**/*.test.js'],
-      parserOptions: {
-        ecmaVersion: 2017,
-        sourceType: 'module',
-      },
-      rules: {
-        extends: 'plugin:ava/recommended',
-        plugins: ['ava'],
-        rules: {
-          'import/no-extraneous-dependencies': [
-            'error',
-            { devDependencies: true },
-          ],
-        },
-      },
-    },
-  ],
 };
